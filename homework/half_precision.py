@@ -36,7 +36,7 @@ class HalfBigNet(torch.nn.Module):
     class Block(torch.nn.Module):
         def __init__(self, channels: int):
             super().__init__()
-            # TODO: Implement me (feel free to copy and reuse code from bignet.py)
+            # TODO: Implement me (feel free to copy and reuse code from bignet.py )
             raise NotImplementedError()
 
         def forward(self, x: torch.Tensor):
