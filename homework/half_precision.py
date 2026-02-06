@@ -20,7 +20,9 @@ class HalfLinear(torch.nn.Linear):
        
         super().__init__(in_features,out_features,bias)
         self.half()
-        self.requires_grad_ = False
+        # self.requires_grad_ = False
+        for param in self.parameters():
+            param.requires_grad = False
       
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
