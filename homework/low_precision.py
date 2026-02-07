@@ -76,7 +76,7 @@ class Linear4Bit(torch.nn.Module):
             weight = state_dict[f"{prefix}weight"]  # noqa: F841
             del state_dict[f"{prefix}weight"]
             # Quantize the weights and store them in self.weight_q4 and self.weight_norm
-            self.weight_q4,self.weight_norm= block_quantize_4bit(weight)
+            self.weight_q4,self.weight_norm= block_quantize_4bit(torch.flatten(weight))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         with torch.no_grad():
